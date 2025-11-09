@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: dbserver
-        image: registry.ocp4.example.com:8443/redhattraining/mysql-app:v1
+        image: registry.redhat.io/rhel9/mysql-80:1-237
         ports:
         - name: database
           containerPort: 3306
