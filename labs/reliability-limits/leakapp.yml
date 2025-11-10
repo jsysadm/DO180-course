@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: leakapp
+  labels:
+    app: leakapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: leakapp
+  template:
+    metadata:
+      labels:
+        app: leakapp
+    spec:
+      containers:
+      - name: leakapp
+        image: quay.io/redhattraining/leakapp:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: 20Mi
+          limits:
+            memory: 35Mi
